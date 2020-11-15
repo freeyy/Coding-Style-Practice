@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <plugins>
+        <words include="plugins/Words1.dll"/>
+        <freqs include="plugins/Freqs1.dll"/>
+    </plugins>
+</configuration>
