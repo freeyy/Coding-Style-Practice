@@ -1,23 +1,21 @@
-# Week6
+# Week7
 
 
 ### First
 ```shell
-cd week6
+cd week7
 ```
 
 
-### Ex 29.1
+### Ex 27.1
 ```shell
-go build -o out TwentieNine.go && ./out ../pride-and-prejudice.txt && rm out 
+go build -o out TwentieSeven.go && ./out ../pride-and-prejudice.txt && rm out 
 ```
 
-### Ex 30.1
-```shell
-go build -o out Thirty.go && ./out ../pride-and-prejudice.txt && rm out 
-```
+**Note**: The program will ask for the name of an additional file, input `additional.txt` and you will see the count of each top word incremented by one. You can also press `Ctrl-C` to exit the loop.
 
-### Ex 32.1 (+32.3)
+
+### Ex 28.1
 ```shell
-go build -o out ThirtyTwo.go && ./out ../pride-and-prejudice.txt && rm out 
+go build -o out TwentieEight.go && ./out ../pride-and-prejudice.txt && rm out 
 ```
