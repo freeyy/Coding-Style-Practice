@@ -1,7 +1,9 @@
 ## Style
 
 ### Chapter 3: Arrays
-- Main data type: array – a fixed-size collection of elements.  B No explicit iteration; instead, an array is accessed by high-level, declarative operations.  - Computation unfolds as search, selection, and transformation of fixedsize data. 
+- Main data type: array – a fixed-size collection of elements.  
+- No explicit iteration; instead, an array is accessed by high-level, declarative operations.  
+- Computation unfolds as search, selection, and transformation of fixedsize data. 
 
 
 
@@ -23,11 +25,11 @@ cd week8
 python week8.py ../pride-and-prejudice.txt 
 ```
 
-Note that the result without replacing with `leet` is:
+Note that the result **without leet replacement** is:
 ```
-of the - 491
-to be - 445
-in the - 397
 mr darcy - 273
-to the - 268
+mrs bennet - 153
+mr collins - 150
+lady catherine - 116
+mr bingley - 115
 ```

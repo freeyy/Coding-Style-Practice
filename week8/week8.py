@@ -39,27 +39,32 @@ w_ranges = w_ranges[np.where(w_ranges[:, 1] - w_ranges[:, 0] > 2)]
 words = list(map(lambda r: characters[r[0] + 1:r[1]], w_ranges))
 # Result: [array(['h', 'e', 'l', 'l', 'o'], dtype='<U1'), 
 #          array(['w', 'o', 'r', 'l', 'd'], dtype='<U1')]
+# Let's recode the characters as strings
+swords = np.array(list(map(lambda w: ''.join(w).strip(), words)))
+# Result: array(['hello', 'world'], dtype='<U5')
 
+# Next, let's remove stop words
+stop_words = np.array(list(set(open('../stop_words.txt').read().split(','))))
+ns_words = swords[~np.isin(swords, stop_words)]
 
-"""mycode"""
+"""replace leet code"""
+ns_words = list(map(lambda w: np.array(list(w)), ns_words))
 leet_alpha = np.array(['4', '8', '<', '|)', '3', '|=', '[,', '#', '1', '_|', '|<', '|_', '44', '|\\|', '0', '|o', 'O_', '|2', '5', '7', '|_|', '\\/', 'VV', '%', '`/', '2'])
-words_leet = list(map(lambda w : w.astype('|S1').view(np.uint8) - 97, words))
+words_leet = list(map(lambda w : w.astype('|S1').view(np.uint8) - 97, ns_words))
 words_leet = list(map(lambda w : leet_alpha[w], words_leet))
 # Result: [array(['#', '3', '|_', '|_', '0'], dtype='<U3'),
 #          array(['VV', '0', '|2', '|_', '|)'], dtype='<U3')]
-"""end"""
 
-# Let's recode the characters as strings
+"""recode as strings """
 swords = np.array(list(map(lambda w: ''.join(w).strip(), words_leet)))
 
-"""mycode"""
+"""build 2-grams"""
 a = swords.reshape((-1, 1)).astype(object)
 # array([['#3|_|_0'], ['VV0|2|_|)']], dtype=object)
 b = np.hstack((a[:-1] + " ", a[1:]))
 # Result: array([['#3|_|_0 ', 'VV0|2|_|)']], dtype=object)
 c = np.sum(b, axis = 1).astype('str')
 # Result: array(['#3|_|_0 VV0|2|_|)'], dtype='<U17')
-"""end"""
 
 ### Finally, count the word occurrences
 uniq, counts = np.unique(c, axis=0, return_counts=True)
