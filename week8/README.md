@@ -14,7 +14,6 @@
 > See starting code [here](https://github.com/crista/exercises-in-programming-style/tree/master/03-arrays).
 
 
-
 ## Run
 
 ```shell

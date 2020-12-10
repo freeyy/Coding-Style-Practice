@@ -1,21 +1,3 @@
-# Week7
+This is the code for selected exercises from the book Coding-Style-Practice. Most are the implementation of the original Python exmples in other languages.
 
-
-### First
-```shell
-cd week7
-```
-
-
-### Ex 27.1
-```shell
-go build -o out TwentieSeven.go && ./out ../pride-and-prejudice.txt && rm out 
-```
-
-**Note**: The program will ask for the name of an additional file, input `additional.txt` and you will see the count of each top word incremented by one. You can also press `Ctrl-C` to exit the loop.
-
-
-### Ex 28.1
-```shell
-go build -o out TwentieEight.go && ./out ../pride-and-prejudice.txt && rm out 
-```
+There are two common input files at root, `pride-and-predudice.txt` and `stop_words.txt`. Code of each Chapter is named after Chapter number. Please read `REAMDME.md` in each folder for further description.
